@@ -64,11 +64,20 @@ Add the template in your form's twig template.
 Extend or modify your base admin template and add the following Javascript and SCSS.
 
 ```twig
-{% stylesheets filter="cssrewrite, compass, ?yui_css"
+{% stylesheets filter="cssrewrite, compass"
     '@OrnjMarkdownBundle/Resources/public/scss/*'
 %}
 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
 {% endstylesheets %}
+
+{% javascripts
+    '@OrnjMarkdownBundle/Resources/public/js/markdown.js'
+    '@OrnjMarkdownBundle/Resources/public/js/to-markdown.js'
+    '@OrnjMarkdownBundle/Resources/public/js/bootbox.js'
+    '@OrnjMarkdownBundle/Resources/public/js/bootstrap-markdown.js'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
 ```
 
 ### The Form Field
