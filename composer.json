@@ -26,5 +26,6 @@
             "Ornj\\Bundle\\MarkdownBundle": ""
         }
     },
+    "target-dir": "Ornj/Bundle/MarkdownBundle",
     "minimum-stability": "dev"
 }
