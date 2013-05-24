@@ -32,7 +32,7 @@ After running updating composer, register the bundle in `app/AppKernel.php`.
 ```php
 $bundles = array(
    // ...
-   new Ornj\Bundle\OrnjMarkdownBundle\OrnjMarkdownBundle(),
+   new Ornj\Bundle\MarkdownBundle\OrnjMarkdownBundle(),
 );
 ```
 
