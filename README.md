@@ -99,4 +99,3 @@ a handy Twig extension for rendering the result.
 1.  Allow inclusion of `textarea` options.
 2.  Investigate removing physical copies of dependencies in bundle.
 3.  Allow customization of ui options through config.
-4.  Possibly convert SCSS to plain CSS to remove requirement for SASS/Compass.
