@@ -60,8 +60,11 @@ Add the template in your form's twig template.
 {% form_theme form 'OrnjMarkdownBundle:Form:fields.html.twig' %}
 ```
 
-### Add  Javascript and SCSS to your base admin template.
-Extend or modify your base admin template and add the following Javascript and SCSS.
+### Add Styles and Javascript
+
+Extend or modify your base admin template and add the following styles. Either SCSS or CSS can be used.
+
+#### SCSS
 
 ```twig
 {% stylesheets filter="cssrewrite, compass"
@@ -69,7 +72,22 @@ Extend or modify your base admin template and add the following Javascript and S
 %}
 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
 {% endstylesheets %}
+```
 
+#### CSS
+
+```twig
+{% stylesheets filter="cssrewrite, compass"
+    '@OrnjMarkdownBundle/Resources/public/css/*'
+%}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+{% endstylesheets %}
+```
+
+#### Javascript
+Extend or modify your base admin template and add the following Javascript.
+
+```twig
 {% javascripts
     '@OrnjMarkdownBundle/Resources/public/js/markdown.js'
     '@OrnjMarkdownBundle/Resources/public/js/to-markdown.js'
