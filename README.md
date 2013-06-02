@@ -32,7 +32,7 @@ After running updating composer, register the bundle in `app/AppKernel.php`.
 ```php
 $bundles = array(
    // ...
-   new Ornj\Bundle\OrnjMarkdownBundle\OrnjMarkdownBundle(),
+   new Ornj\Bundle\MarkdownBundle\OrnjMarkdownBundle(),
 );
 ```
 
@@ -60,8 +60,11 @@ Add the template in your form's twig template.
 {% form_theme form 'OrnjMarkdownBundle:Form:fields.html.twig' %}
 ```
 
-### Add  Javascript and SCSS to your base admin template.
-Extend or modify your base admin template and add the following Javascript and SCSS.
+### Add Styles and Javascript
+
+Extend or modify your base admin template and add the following styles. Either SCSS or CSS can be used.
+
+#### SCSS
 
 ```twig
 {% stylesheets filter="cssrewrite, compass"
@@ -69,7 +72,22 @@ Extend or modify your base admin template and add the following Javascript and S
 %}
 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
 {% endstylesheets %}
+```
 
+#### CSS
+
+```twig
+{% stylesheets filter="cssrewrite, compass"
+    '@OrnjMarkdownBundle/Resources/public/css/*'
+%}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+{% endstylesheets %}
+```
+
+#### Javascript
+Extend or modify your base admin template and add the following Javascript.
+
+```twig
 {% javascripts
     '@OrnjMarkdownBundle/Resources/public/js/markdown.js'
     '@OrnjMarkdownBundle/Resources/public/js/to-markdown.js'
@@ -99,4 +117,3 @@ a handy Twig extension for rendering the result.
 1.  Allow inclusion of `textarea` options.
 2.  Investigate removing physical copies of dependencies in bundle.
 3.  Allow customization of ui options through config.
-4.  Possibly convert SCSS to plain CSS to remove requirement for SASS/Compass.
