@@ -663,7 +663,7 @@
         data: [{
           name: 'cmdBold',
           title: 'Bold',
-          icon: 'icon icon-bold',
+          icon: 'fa fa-bold',
           callback: function(e){
             // Give/remove ** surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -692,7 +692,7 @@
         },{
           name: 'cmdItalic',
           title: 'Italic',
-          icon: 'icon icon-italic',
+          icon: 'fa fa-italic',
           callback: function(e){
             // Give/remove * surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -721,7 +721,7 @@
         },{
           name: 'cmdHeading',
           title: 'Heading',
-          icon: 'icon icon-font',
+          icon: 'fa fa-font',
           callback: function(e){
             // Append/remove ### surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent(), pointer, prevChar
@@ -757,7 +757,7 @@
         data: [{
           name: 'cmdList',
           title: 'List',
-          icon: 'icon icon-list',
+          icon: 'fa fa-list',
           callback: function(e){
             // Prepend/Give - surround the selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
