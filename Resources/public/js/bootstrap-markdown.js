@@ -753,65 +753,6 @@
           }
         }]
       },{
-        name: 'groupLink',
-        data: [{
-          name: 'cmdUrl',
-          title: 'URL/Link',
-          icon: 'icon icon-globe',
-          toggle: 'modal',
-          callback: function(e){
-            // Give [] surround the selection and prepend the link
-            var chunk, cursor, selected = e.getSelection(), content = e.getContent();
-
-            if (selected.length == 0) {
-              // Give extra word
-              chunk = 'enter link description here'
-            } else {
-              chunk = selected.text
-            }
-
-            bootbox.prompt('Insert Hyperlink', 'cancel', 'insert', function(result) {
-                if (result !== null) {
-                    // transform selection and set the cursor into chunked text
-                    e.replaceSelection('['+chunk+']('+result+')')
-                    cursor = selected.start+1
-
-                    // Set the cursor
-                    e.setSelection(cursor,cursor+chunk.length)
-                }
-            }, 'http://');
-          }
-        },{
-          name: 'cmdImage',
-          title: 'Image',
-          icon: 'icon icon-picture',
-          callback: function(e){
-            // Give ![] surround the selection and prepend the image link
-            var chunk, cursor, selected = e.getSelection(), content = e.getContent();
-
-            if (selected.length == 0) {
-              // Give extra word
-              chunk = 'enter image description here'
-            } else {
-              chunk = selected.text
-            }
-
-              bootbox.prompt('Insert Hyperlink', 'cancel', 'insert', function(result) {
-                  if (result !== null) {
-                      // transform selection and set the cursor into chunked text
-                      e.replaceSelection('['+chunk+']('+result+' "enter image title here")')
-                      cursor = selected.start+1
-
-                      // Set the next tab
-                      e.setNextTab('enter image title here')
-
-                      // Set the cursor
-                      e.setSelection(cursor,cursor+chunk.length)
-                  }
-              }, 'http://');
-          }
-        }]
-      },{
         name: 'groupMisc',
         data: [{
           name: 'cmdList',
@@ -860,36 +801,13 @@
             // Set the cursor
             e.setSelection(cursor,cursor+chunk.length)
           }
-        },
-
-        /**
-         * Block Quote
-         * By Stephen Hurwitz
-         *
-         * @todo remove this and all the bootbox stuff and move to a new file so this can be updated
-         */
-            {
-                name:  'cmdBlockquote',
-                title: 'Block Quote',
-                icon:  'icon icon-user',
-                callback: function(e) {
-                    var chunk, cursor, selected = e.getSelection(), content = e.getContent();
-
-                    chunk = '> ' + selected.text + "\n"
-                          + '> <cite><span>{PERSON NAME}</span>, {PERSON ROLE}</cite>';
-
-                    e.replaceSelection(chunk);
-                    cursor = selected.start;
-
-                    e.setSelection(cursor, cursor + chunk.length);
-                }
-            }]
+        },]
       },{
         name: 'groupUtil',
         data: [{
           name: 'cmdPreview',
-          title: 'Preview',
-          btnText: 'Preview',
+          title: 'Prévisualiser',
+          btnText: 'Prévisualiser',
           btnClass: 'btn btn-inverse',
           icon: 'icon icon-white icon-search',
           callback: function(e){
