@@ -662,7 +662,7 @@
         name: 'groupFont',
         data: [{
           name: 'cmdBold',
-          title: 'Bold',
+          title: 'Gras',
           icon: 'fa fa-bold',
           callback: function(e){
             // Give/remove ** surround the selection
@@ -691,7 +691,7 @@
           }
         },{
           name: 'cmdItalic',
-          title: 'Italic',
+          title: 'Italique',
           icon: 'fa fa-italic',
           callback: function(e){
             // Give/remove * surround the selection
@@ -720,7 +720,7 @@
           }
         },{
           name: 'cmdHeading',
-          title: 'Heading',
+          title: 'Titre',
           icon: 'fa fa-font',
           callback: function(e){
             // Append/remove ### surround the selection
@@ -756,7 +756,7 @@
         name: 'groupMisc',
         data: [{
           name: 'cmdList',
-          title: 'List',
+          title: 'Liste',
           icon: 'fa fa-list',
           callback: function(e){
             // Prepend/Give - surround the selection
